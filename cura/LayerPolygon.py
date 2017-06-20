@@ -16,9 +16,14 @@ class LayerPolygon:
     MoveCombingType = 8
     MoveRetractionType = 9
     SupportInterfaceType = 10
-    
-    __jump_map = numpy.logical_or(numpy.logical_or(numpy.arange(11) == NoneType, numpy.arange(11) == MoveCombingType), numpy.arange(11) == MoveRetractionType)
-    
+    PurgeType = 11
+
+    total_type_count = 12
+
+    __jump_map = numpy.logical_or(numpy.logical_or(numpy.arange(total_type_count) == NoneType,
+                                                   numpy.arange(total_type_count) == MoveCombingType),
+                                  numpy.arange(total_type_count) == MoveRetractionType)
+
     ##  LayerPolygon, used in ProcessSlicedLayersJob
     #   \param extruder
     #   \param line_types array with line_types
@@ -216,7 +221,8 @@ class LayerPolygon:
                 theme.getColor("layerview_support_infill").getRgbF(), # SupportInfillType
                 theme.getColor("layerview_move_combing").getRgbF(), # MoveCombingType
                 theme.getColor("layerview_move_retraction").getRgbF(), # MoveRetractionType
-                theme.getColor("layerview_support_interface").getRgbF()  # SupportInterfaceType
+                theme.getColor("layerview_support_interface").getRgbF(),  # SupportInterfaceType
+                theme.getColor("layerview_purge").getRgbF()  # PurgeType
             ])
 
         return cls.__color_map
