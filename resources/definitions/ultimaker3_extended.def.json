@@ -26,11 +26,20 @@
             "1": "ultimaker3_extended_extruder_right"
         },
         "first_start_actions": [ "DiscoverUM3Action" ],
-        "supported_actions": [ "DiscoverUM3Action" ]
+        "supported_actions": [ "DiscoverUM3Action" ],
+        "no_nozzle_offsetting_for_disallowed_areas": true
     },
 
     "overrides": {
         "machine_name": { "default_value": "Ultimaker 3 Extended" },
-        "machine_height": { "default_value": 300 }
+        "machine_height": { "default_value": 300 },
+        "machine_disallowed_areas": { "default_value": [
+            [[92.8, -53.4], [92.8, -97.5], [116.5, -97.5], [116.5, -53.4]],
+            [[73.8, 107.5], [73.8, 100.5], [116.5, 100.5], [116.5, 107.5]],
+            [[74.6, 107.5], [74.6, 100.5], [116.5, 100.5], [116.5, 107.5]],
+            [[74.9, -97.5], [74.9, -107.5], [116.5, -107.5], [116.5, -97.5]],
+            [[-116.5, -103.5], [-116.5, -107.5], [-100.9, -107.5], [-100.9, -103.5]],
+            [[-116.5, 105.8], [-96.9, 105.8], [-96.9, 107.5], [-116.5, 107.5]]
+        ]}
     }
 }
